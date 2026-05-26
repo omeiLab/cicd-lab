@@ -40,9 +40,8 @@ jobs:
 
       - name: Tests
         run: |
-          npm test -- --reporter=default --reporter=junit
-        env:
-          VITEST_OUTPUT_FILE: reports/junit.xml
+          mkdir -p reports
+          npm test -- --reporter=default --reporter=junit --outputFile.junit=reports/junit.xml
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v5
