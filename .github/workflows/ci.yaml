@@ -46,8 +46,8 @@ jobs:
           JEST_JUNIT_OUTPUT_NAME: junit.xml
 
       - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v5 
-        if: always() 
+        uses: mikepenz/action-junit-report@v5
+        if: always()
         with:
           report_paths: 'reports/junit.xml'
           detailed_summary: true
