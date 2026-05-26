@@ -6,7 +6,7 @@ const host = process.env.HOST || '0.0.0.0';
 
 async function start() {
   try {
-    await app.listen({ port, host });
+    await app.listen({ port.toString(), host });
     app.log.info(`Server listening at http://${host}:${port}`);
   } catch (error) {
     app.log.error(error);
