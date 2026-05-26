@@ -38,12 +38,11 @@ jobs:
       - name: Prettier Check
         run: npx prettier --check .
 
-      - name: Run Tests
+      - name: Tests
         run: |
-          npm test -- --ci --reporters=default --reporters=jest-junit
+          npm test -- --reporter=default --reporter=junit
         env:
-          JEST_JUNIT_OUTPUT_DIR: reports
-          JEST_JUNIT_OUTPUT_NAME: junit.xml
+          VITEST_OUTPUT_FILE: reports/junit.xml
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v5
